@@ -7,17 +7,16 @@ namespace Geometry
     {
         static void Main(string[] args)
         {
-            Circle myAllArgsCircle = new Circle(3, 1, 4, "green");
-            Console.WriteLine(myAllArgsCircle.CalculatePerimeter());
-            Console.WriteLine(myAllArgsCircle.CalculateArea());
+            Circle[] myCircleArray = new Circle[3];
+            myCircleArray[0] = new Circle(3, 1, 4, "green");
+            myCircleArray[1] = new Circle();
+            myCircleArray[2] = new Circle(6);
 
-            Circle myDefaultCircle = new Circle();
-            Console.WriteLine(myDefaultCircle.CalculatePerimeter());
-            Console.WriteLine(myDefaultCircle.CalculateArea());
-
-            Circle myRadiusCircle = new Circle(6);
-            Console.WriteLine(myRadiusCircle.CalculatePerimeter());
-            Console.WriteLine(myRadiusCircle.CalculateArea());
+            for (int i = 0; i < myCircleArray.Length; i++)
+            {
+                Console.WriteLine(myCircleArray[i].CalculatePerimeter());
+                Console.WriteLine(myCircleArray[i].CalculateArea());
+            }
         }
     }
 }
