@@ -11,17 +11,13 @@ namespace Geometry
             Console.WriteLine(myAllArgsCircle.CalculatePerimeter());
             Console.WriteLine(myAllArgsCircle.CalculateArea());
 
-
             Circle myRadiusCircle = new Circle(6);
             Console.WriteLine(myRadiusCircle.CalculatePerimeter());
             Console.WriteLine(myRadiusCircle.CalculateArea());
 
-
             Circle myDefaultCircle = new Circle();
             Console.WriteLine(myDefaultCircle.CalculatePerimeter());
             Console.WriteLine(myDefaultCircle.CalculateArea());
-
-            Console.WriteLine(Circle.Definition());
         }
     }
 }
