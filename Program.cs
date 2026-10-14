@@ -8,7 +8,7 @@ namespace Geometry
         static void Main(string[] args)
         {
             Circle[] myCircleArray = new Circle[3];
-            myCircleArray[0] = new Circle(3, 1, 4, "green");
+            myCircleArray[0] = new Circle(3, new Point(1, 4), "green");
             myCircleArray[1] = new Circle();
             myCircleArray[2] = new Circle(6);
 
@@ -16,6 +16,8 @@ namespace Geometry
             {
                 Console.WriteLine(myCircleArray[i].CalculatePerimeter());
                 Console.WriteLine(myCircleArray[i].CalculateArea());
+                Console.WriteLine(myCircleArray[i].Center.X);
+                Console.WriteLine(myCircleArray[i].Center.Y);
             }
         }
     }

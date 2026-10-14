@@ -1,35 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
-using System.Xml.Linq;
 
 namespace Geometry.Models
 {
-    public class Circle
+    internal class Circle
     {
         private const double LimitValueForBigShape = 100.0;
         private double _radius;
-        private double _centerX;
-        private double _centerY;
+        private Point _center;
         private string _color;
 
         public double Radius   // property
         {
             get { return _radius; }   // get method
-            set { _radius = value; }  // set method 
+            set { _radius = value; }  // set method
         }
 
-        public double CenterX
+        public Point Center
         {
-            get { return _centerX; }
-            set { _centerX = value; }
-        }
-
-        public double CenterY
-        {
-            get { return _centerY; }
-            set { _centerY = value; }
+            get => _center; // different way
+            set => _center = value;
         }
 
         public string Color
@@ -56,22 +47,19 @@ namespace Geometry.Models
                 return "I am small!!!";
         }
 
-        public Circle(double radius, double centerX, double centerY, string color)
+        public Circle(double radius, Point center, string color)
         {
-            this._radius = radius;
-            this._centerX = centerX;
-            this._centerX = centerY;
-            this._color = color;
+            _radius = radius;
+            _center = center;
+            _color = color;
         }
 
-        public Circle(double radius) : this(radius, 0, 0, "white")
+        public Circle(double radius) : this(radius, new Point(), "white")
         {
-
         }
 
         public Circle() : this(1)
         {
-
         }
 
         public static string Definition()
