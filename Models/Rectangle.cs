@@ -33,7 +33,7 @@ namespace Geometry.Models
             set => _color = value;
         }
 
-        public Rectangle(): this (2, 1, new Point(), "white")
+        public Rectangle(): this (2, 1)
         {
         }
         public Rectangle(double length, double width)  : this(length, width, new Point(), "white")
