@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Geometry.Models
 {
-    internal class Rectangle
+    public class Rectangle
     {
         private const double LimitValueForBigShape = 100.0;
         private double _length;
@@ -32,13 +32,6 @@ namespace Geometry.Models
             get => _color;
             set => _color = value;
         }
-
-        public Rectangle(): this (2, 1)
-        {
-        }
-        public Rectangle(double length, double width)  : this(length, width, new Point(), "white")
-        {
-        }
         public Rectangle(double length, double width, Point topLeftCorner, string color)
         {
             this._length = length;
@@ -46,7 +39,14 @@ namespace Geometry.Models
             this._topLeftCorner = topLeftCorner;
             this._color = color;
         }
-
+        public Rectangle(double length, double width) : this(length, width, new Point(), "white")
+        {
+        }
+        public Rectangle(): this (2, 1)
+        {
+        }
+     
+       
         public string DescribeSize()
         {
             if (CalculateArea() > LimitValueForBigShape)

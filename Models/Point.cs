@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Geometry.Models
 {
-    internal class Point
+    public class Point
     {
         private double _x;
         private double _y;
