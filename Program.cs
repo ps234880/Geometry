@@ -7,29 +7,38 @@ namespace Geometry
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Rectangle.Definition());
+            Circle myCircle = new Circle(3, new Point(2, 5), "green");
+            //ShowInformation(myCircle);
+            //Console.WriteLine();
 
-            Circle[] myCircleArray = new Circle[3];
-            myCircleArray[0] = new Circle(3, new Point(1, 4), "green");
-            myCircleArray[1] = new Circle();
-            myCircleArray[2] = new Circle(6);
+            Rectangle myRectangle = new Rectangle(3, 4, new Point(-2, 6), "blue");
+            //ShowInformation(myRectangle);
 
-            Rectangle[] myRectangleArray = new Rectangle[3];
-            myRectangleArray[0] = new Rectangle(4, 3, new Point(2, 5), "blue");
-            myRectangleArray[1] = new Rectangle();
-            myRectangleArray[2] = new Rectangle(25, 10);
+            Shape[] shapes = new Shape[3]; // this is not instantiate
+            shapes[0] = myCircle;
+            shapes[1] = myRectangle;
+            shapes[2] = new Circle(10, new Point(-1, -3), "crimson");
 
-            for (int i = 0; i < myCircleArray.Length; i++)
+            for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(myCircleArray[i]);
-                Console.WriteLine(myCircleArray[i].DescribeSize());
+                Console.WriteLine(shapes[i]);
+                Console.WriteLine();
             }
 
-            for (int i = 0; i < myRectangleArray.Length; i++)
-            {
-                Console.WriteLine(myRectangleArray[i]);
-                Console.WriteLine(myRectangleArray[i].DescribeSize());
-            }
+            int integer1 = 3;
+            int integer2 = 3;
+            int? integer3 = 3;
+            int? integer4 = 3;
+
+            Console.WriteLine(integer1);
+            Console.WriteLine(integer2);
+            Console.WriteLine(integer3);
+            Console.WriteLine(integer4);
+        }
+
+        public static void ShowInformation(Shape shape)
+        {
+            Console.WriteLine(shape);
         }
     }
 }

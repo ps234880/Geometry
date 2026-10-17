@@ -5,11 +5,12 @@ using System.Text;
 
 namespace Geometry.Models
 {
-    public class Shape
+    public abstract class Shape
     {
         protected const double LimitValueForBigShape = 100.0;
         protected const string DefaultColor = "white";
         protected string _color;
+
         public string Color 
         {
             get => _color;
@@ -20,6 +21,7 @@ namespace Geometry.Models
         {
             this._color = color;
         }
+
         public Shape() : this (DefaultColor)
         {
             
@@ -32,14 +34,11 @@ namespace Geometry.Models
             else
                 return "I am small!!!";
         }
-        public virtual double CalculateArea()
-        {
-            return 0;
-        }
-        public virtual double CalculatePerimeter()
-        {
-            return 0;
-        }
+
+        public abstract double CalculateArea();
+
+        public abstract double CalculatePerimeter();
+
         public static string Definition()
         {
             return "A shape is a collection of points.";
