@@ -27,5 +27,10 @@ namespace Geometry.Models
             this._x = x;
             this._y = y;
         }
+
+        public override string ToString()
+        {
+            return $"({X:F2}, {Y:F2})";
+        }
     }
 }
