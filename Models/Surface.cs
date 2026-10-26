@@ -35,6 +35,7 @@ namespace Geometry.Models
             string result = "";
             if (MyShapes.Count > 0)
             {
+                MyShapes.Sort();
                 foreach (Shape shape in MyShapes)
                 {
                     result += shape.ToString() + "\n\n";

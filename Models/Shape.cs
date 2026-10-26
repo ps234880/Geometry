@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Geometry.Models
 {
-    public abstract class Shape
+    public abstract class Shape : IComparable<Shape>
     {
         protected const double LimitValueForBigShape = 100.0;
         protected const string DefaultColor = "white";
@@ -48,6 +48,17 @@ namespace Geometry.Models
         {
             return "Color: " + _color + "\nPerimeter: " + CalculatePerimeter() +
             "\nArea: " + CalculateArea();
+        }
+
+        public int CompareTo(Shape? other)
+        {
+            if (other == null) return 1;
+            if (CalculateArea() > other.CalculateArea())
+                return 1;
+            else if (CalculateArea() < other.CalculateArea())
+                return -1;
+            else
+                return 0;
         }
     }
 }
