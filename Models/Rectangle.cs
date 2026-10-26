@@ -14,13 +14,23 @@ namespace Geometry.Models
         public double Length
         {
             get => _length;
-            set => _length = value;
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentException("The length must be positive.");
+                _length = value;
+            }
         }
 
         public double Width
         {
             get => _width;
-            set => _width = value;
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentException("The width must be positive.");
+                _width = value;
+            }
         }
 
         public Point TopLeftCorner
@@ -31,8 +41,8 @@ namespace Geometry.Models
 
         public Rectangle(double length, double width, Point topLeftCorner, string color) : base(color)
         {
-            this._length = length;
-            this._width = width;
+            this.Length = length;
+            this.Width = width;
             this._topLeftCorner = topLeftCorner;
         }
 

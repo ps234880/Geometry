@@ -9,10 +9,15 @@ namespace Geometry.Models
         private double _radius;
         private Point _center;
 
-        public double Radius   // property
+        public double Radius
         {
-            get { return _radius; }   // get method
-            set { _radius = value; }  // set method
+            get => _radius;
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentException("The radius must be positive.");
+                _radius = value;
+            }
         }
 
         public Point Center
@@ -23,7 +28,7 @@ namespace Geometry.Models
 
         public Circle(double radius, Point center, string color) : base(color)
         {
-            _radius = radius;
+            Radius = radius;  // Use setter to validate
             _center = center;
         }
 
